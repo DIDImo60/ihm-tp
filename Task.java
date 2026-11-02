@@ -29,7 +29,7 @@ public class Task {
     public void setStatu(boolean statu){
         this.done = statu;
     }
-
+    // تحويل الى نص
     public String toFileString(){
         String statu = this.done? "done" : "not done";
         return this.title+"|"+statu  ;

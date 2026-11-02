@@ -5,14 +5,14 @@ import java.io.*;
 public class TaskManager {
     private ArrayList<Task> tasks = new ArrayList<>();
     static Scanner scanner = new Scanner(System.in);
-
+// اضافه مهمه
     public void addTask() {
         System.out.print("enter task : ");
         String title = scanner.nextLine();
         this.tasks.add(new Task(title));
         System.out.println("task '" + title + "' added!");
     }
-
+// اظهار مهمه
     public void viewTasks() {
         if (this.tasks.isEmpty()) {
             System.out.println("no tasks yet!");
@@ -25,7 +25,7 @@ public class TaskManager {
             System.out.println((i + 1) + "." + t.title + "[" + status + "]");
         }
     }
-
+// اكمال مهمه
     public void markDone() {
         this.viewTasks();
         if (this.tasks.isEmpty()) {
@@ -50,7 +50,7 @@ public class TaskManager {
             System.out.println("please enter a valid number.\n");
         }
     }
-
+// حذف مهمه
     public void deleteTask() {
         viewTasks();
         if (this.tasks.isEmpty()) {
@@ -75,7 +75,7 @@ public class TaskManager {
             System.out.println("please enter a valid number\n");
         }
     }
-
+// حفظ مهمه
     public void saveInFile(String filepath ) {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(filepath))){
             for(Task task : this.tasks){
@@ -87,7 +87,7 @@ public class TaskManager {
             System.out.println("save error" + e.getMessage());
         }
     }
-
+// تحميل مهمه
     public void loadFromFile(String filepath){
         File file = new File(filepath);
         if(!file.exists()){

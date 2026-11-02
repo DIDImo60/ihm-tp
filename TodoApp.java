@@ -31,7 +31,7 @@ public class TodoApp {
         while (true) {
             if(isMenuMode){
                 showMenu();
-                System.out.print("choose an option (1-5) : ");
+                System.out.print("choose an option (1-6) : ");
                 String choice = scanner.nextLine();
 
                 switch (choice) {
